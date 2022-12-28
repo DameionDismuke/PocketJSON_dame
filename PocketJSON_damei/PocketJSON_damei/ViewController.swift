@@ -51,6 +51,19 @@ class ViewController: UIViewController {
         do {
             let jsonData1 = try Data(contentsOf: url1)
             let jsonData2 = try Data(contentsOf: url2)
+            let decoder = JSONDecoder()
+            
+            let mons = try decoder.decode(monster.self, from: jsonData1)
+            let typings = try decoder.decode(dragonTyping.self, from: jsonData2)
+            
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            
+            
+            
+            let encoder = JSONEncoder()
+            let data1 = try encoder.encode(jsonData1)
+            let data2 = try encoder.encode(jsonData2)
+            
             monster = try JSONDecoder().decode(Monster.self, from: jsonData1)
             dragonTyping = try JSONDecoder().decode(DragonTyping.self, from: jsonData2)
 
