@@ -15,7 +15,7 @@
 import Foundation
 
 
-struct DragonTyping: Decodable {
+struct DragonTyping: Codable {
     
     let id: Int?
     let name: String?
@@ -43,7 +43,7 @@ struct DragonTyping: Decodable {
     
 }
 
-struct DamageRelations: Decodable {
+struct DamageRelations: Codable {
     
     let doubleDamageFrom: [String]?
     let doubleDamageTo: [String]?
@@ -66,7 +66,7 @@ struct DamageRelations: Decodable {
     
 }
 
-struct TypingGameIndices: Decodable {
+struct TypingGameIndices: Codable {
     
     let gameIndex: Int?
     let generation: [String]?
@@ -78,25 +78,25 @@ struct TypingGameIndices: Decodable {
     }
 }
 
-struct MoveDamageClass: Decodable {
+struct MoveDamageClass: Codable {
     
     let name: String?
     let url: String?
 }
 
-struct Generation: Decodable {
+struct Generation: Codable {
     
     let name: String?
     let url: String?
 }
 
-struct TypingMoves: Decodable {
+struct TypingMoves: Codable {
     
     let name: String?
     let url: String?
 }
 
-struct Pokemon: Decodable {
+struct Pokemon: Codable {
     
     let slot: Int?
     let pokemonNext: [String:String?]
@@ -108,7 +108,7 @@ struct Pokemon: Decodable {
     
 }
 
-struct PokemonNext: Decodable {
+struct PokemonNext: Codable {
     
     let name: String?
     let url: String?
